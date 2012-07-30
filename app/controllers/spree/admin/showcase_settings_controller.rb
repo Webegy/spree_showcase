@@ -10,7 +10,6 @@ module Spree
                         :animation_type,
                         :slideshow_speed,
                         :animation_duration,
-                        :randomize,
                         :animation_loop,
                         :pause_on_hover]
       end
@@ -24,7 +23,6 @@ module Spree
                         :animation_type,
                         :slideshow_speed,
                         :animation_duration,
-                        :randomize,
                         :animation_loop,
                         :pause_on_hover]
       end
