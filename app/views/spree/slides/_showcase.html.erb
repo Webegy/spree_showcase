@@ -3,11 +3,13 @@
 		<div class="flexslider alpha omega sixteen columns">
 		  <ul class="slides">
 				<% Spree::Slide.published.no_slides(SpreeShowcase::Config.number_of_slides_to_show).each do |slide| %>
-					<li>
-						<%= link_to(slide.target_url.present? ? slide.target_url : "#") do %>
-							<%= slide.image.present? ? image_tag(slide.image.url(:showcase)) : image_tag("http://www.placehold.it/#{SpreeShowcase::Config.preferences[:showcase_style].match(/\d{2,}x\d{2,}/)}&text=Spree%20Showcase%20by%20@daemonsy") %>
-						<% end %>
-					</li>
+					<% if slide.name[-2,2] == I18n.locale %>
+  					<li>
+  						<%= link_to(slide.target_url.present? ? slide.target_url : "#") do %>
+  							<%= slide.image.present? ? image_tag(slide.image.url(:showcase)) : image_tag("http://www.placehold.it/#{SpreeShowcase::Config.preferences[:showcase_style].match(/\d{2,}x\d{2,}/)}&text=Spree%20Showcase%20by%20@daemonsy") %>
+  						<% end %>
+  					</li>
+  				<% end %>
 				<% end %>
 		  </ul>
 		</div>
